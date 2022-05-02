@@ -21,13 +21,16 @@ def main():
             repeat_num = int(repeat_num_str)
             user_num = int(user_num_str)
             counter = 0
-            for counter in range(repeat_num + 1):
-                print(
-                    Fore.GREEN
-                    + "{} * {} = {}".format(user_num, counter, user_num * counter)
-                )
+            if repeat_num > 0 and user_num > 0:
+                for counter in range(repeat_num + 1):
+                    print(
+                        Fore.GREEN
+                        + "{} * {} = {}".format(user_num, counter, user_num * counter)
+                    )
+            else:
+                print(Fore.RED + "You have to enter a number greater than 0")
         except:
-            print("you have to enter a number not a string")
+            print(Fore.RED + "you have to enter a number not a string")
         input(Fore.RED + "press <enter> if you want to restart")
         continue
 
